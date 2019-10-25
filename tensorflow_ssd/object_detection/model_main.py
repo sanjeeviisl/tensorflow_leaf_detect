@@ -33,7 +33,7 @@ flags.DEFINE_string(
     'where event and checkpoint files will be written.')
 flags.DEFINE_string('pipeline_config_path', "model/ssd_mobilenet_v3/pipeline.config", 'Path to pipeline config '
                     'file.')
-flags.DEFINE_integer('num_train_steps', 100 , 'Number of train steps.')
+flags.DEFINE_integer('num_train_steps', 1000000 , 'Number of train steps.')
 flags.DEFINE_boolean('eval_training_data', False,
                      'If training data should be evaluated for this job. Note '
                      'that one call only use this in eval-only mode, and '
