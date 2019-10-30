@@ -97,18 +97,18 @@ from object_detection import export_tflite_ssd_graph_lib
 from object_detection.protos import pipeline_pb2
 
 flags = tf.app.flags
-flags.DEFINE_string('output_directory', None, 'Path to write outputs.')
+flags.DEFINE_string('output_directory', "data/", 'Path to write outputs.')
 flags.DEFINE_string(
-    'pipeline_config_path', None,
+    'pipeline_config_path',"model/ssd_mobilenet_v3/pipeline.config" ,
     'Path to a pipeline_pb2.TrainEvalPipelineConfig config '
     'file.')
-flags.DEFINE_string('trained_checkpoint_prefix', None, 'Checkpoint prefix.')
+flags.DEFINE_string('trained_checkpoint_prefix', "/hdd/tensorflow_leaf_detect/tensorflow_ssd/data/model.ckpt-3115", 'Checkpoint prefix.')
 flags.DEFINE_integer('max_detections', 10,
                      'Maximum number of detections (boxes) to show.')
 flags.DEFINE_integer('max_classes_per_detection', 1,
                      'Maximum number of classes to output per detection box.')
 flags.DEFINE_integer(
-    'detections_per_class', 100,
+    'detections_per_class', 30,
     'Number of anchors used per class in Regular Non-Max-Suppression.')
 flags.DEFINE_bool('add_postprocessing_op', True,
                   'Add TFLite custom op for postprocessing to the graph.')
