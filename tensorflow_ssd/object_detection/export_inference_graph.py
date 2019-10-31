@@ -125,7 +125,7 @@ flags.DEFINE_string('input_shape', None,
 flags.DEFINE_string('pipeline_config_path', "model/ssd_mobilenet_v3/pipeline.config",
                     'Path to a pipeline_pb2.TrainEvalPipelineConfig config '
                     'file.')
-flags.DEFINE_string('trained_checkpoint_prefix', "/hdd/tensorflow_leaf_detect/tensorflow_ssd/data/model.ckpt-3115",
+flags.DEFINE_string('trained_checkpoint_prefix', "data/model.ckpt-6177",
                     'Path to trained checkpoint, typically of the form '
                     'path/to/model.ckpt')
 flags.DEFINE_string('output_directory', "data/", 'Path to write outputs.')
