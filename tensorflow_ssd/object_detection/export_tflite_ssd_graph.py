@@ -6,10 +6,10 @@ from object_detection.protos import pipeline_pb2
 flags = tf.app.flags
 flags.DEFINE_string('output_directory', "data/", 'Path to write outputs.')
 flags.DEFINE_string(
-    'pipeline_config_path',"model/ssd_mobilenet_v3/pipeline.config" ,
+    'pipeline_config_path',"model/ssd_mobilenet_v2/pipeline.config" ,
     'Path to a pipeline_pb2.TrainEvalPipelineConfig config '
     'file.')
-flags.DEFINE_string('trained_checkpoint_prefix', "data/model.ckpt-7716", 'Checkpoint prefix.')
+flags.DEFINE_string('trained_checkpoint_prefix', "data/model.ckpt-88", 'Checkpoint prefix.')
 flags.DEFINE_integer('max_detections', 4,
                      'Maximum number of detections (boxes) to show.')
 
