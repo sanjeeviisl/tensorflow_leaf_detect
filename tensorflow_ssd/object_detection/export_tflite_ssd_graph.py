@@ -9,13 +9,14 @@ flags.DEFINE_string(
     'pipeline_config_path',"model/ssd_mobilenet_v3/pipeline.config" ,
     'Path to a pipeline_pb2.TrainEvalPipelineConfig config '
     'file.')
-flags.DEFINE_string('trained_checkpoint_prefix', "data/model.ckpt-6177", 'Checkpoint prefix.')
-flags.DEFINE_integer('max_detections', 31,
+flags.DEFINE_string('trained_checkpoint_prefix', "data/model.ckpt-7716", 'Checkpoint prefix.')
+flags.DEFINE_integer('max_detections', 4,
                      'Maximum number of detections (boxes) to show.')
-flags.DEFINE_integer('max_classes_per_detection', 2,
+
+flags.DEFINE_integer('max_classes_per_detection', 4,
                      'Maximum number of classes to output per detection box.')
 flags.DEFINE_integer(
-    'detections_per_class', 31,
+    'detections_per_class', 4,
     'Number of anchors used per class in Regular Non-Max-Suppression.')
 flags.DEFINE_bool('add_postprocessing_op', True,
                   'Add TFLite custom op for postprocessing to the graph.')
