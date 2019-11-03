@@ -25,12 +25,12 @@ from object_detection.utils import label_map_util
 
 flags = tf.app.flags
 flags.DEFINE_string('data_dir', '/hdd/data/LeafDetectData', 'Root directory to raw PASCAL VOC dataset.')
-flags.DEFINE_string('set', 'test', 'Convert training set, validation set or '
+flags.DEFINE_string('set', 'trainval', 'Convert training set, validation set or '
                     'merged set.')
 flags.DEFINE_string('annotations_dir', 'Annotations',
                     '(Relative) path to annotations directory.')
 flags.DEFINE_string('year', 'LEAF2019', 'Desired challenge year.')
-flags.DEFINE_string('output_path', 'data/leaf_test.record', 'Path to output TFRecord')
+flags.DEFINE_string('output_path', 'data/leaf_train.record', 'Path to output TFRecord')
 flags.DEFINE_string('label_map_path', 'data/leaf_label_map.pbtxt',
                     'Path to label map proto')
 flags.DEFINE_boolean('ignore_difficult_instances', False, 'Whether to ignore '
