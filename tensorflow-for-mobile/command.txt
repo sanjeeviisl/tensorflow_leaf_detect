@@ -8,10 +8,14 @@ python3 scripts/retrain.py   \
  --architecture mobilenet_1.0_224
 
 python3  scripts/label_image.py  \
- --image ../leaf_disease_38_types/leaf_disease/Blueberry___healthy/test.jpg \
+ --image ../leaf_disease_38_types/leaf_disease/1.Apple_scab/Apple_scab_masked_1189.jpg \
  --graph leafdisease_graph.pb  \
  --labels leafdisease_labels.txt \
  --input_layer input
+
+
+python3  scripts/label_image.py   --image ../leaf_disease_38_types/leaf_disease/1.Apple_scab/Apple_scab_masked_1189.jpg  --graph leafdisease_graph.pb   --labels leafdisease_labels.txt  --input_layer input
+
 
 
  python3 scripts/retrain.py   \
@@ -19,12 +23,12 @@ python3  scripts/label_image.py  \
  --summaries_dir=training_summaries_leaf251/basic \
  --output_graph=leaf251_graph.pb \
  --output_labels=leaf251_labels.txt \
- --image_dir=../leaf_251_files/normalized_leaf/normalization\
+ --image_dir=../leaf_251_files/healthy_leaf\
  --how_many_training_steps=14000\
  --architecture mobilenet_1.0_224
 
 python3 scripts/label_image.py  \
- --image  ../leaf_251_files/normalized_leaf/normalization/190._quercus_montana/13292231174834.jpg \
+ --image  ../leaf_251_files/healthy_leaf/190._quercus_montana/quercus_montana_seg_0049.jpg \
  --graph leaf251_graph.pb  \
  --labels leaf251_labels.txt \
  --input_layer input
