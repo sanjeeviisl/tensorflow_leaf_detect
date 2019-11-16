@@ -9,11 +9,11 @@ flags.DEFINE_string(
     'pipeline_config_path',"model/ssd_mobilenet_v2/pipeline.config" ,
     'Path to a pipeline_pb2.TrainEvalPipelineConfig config '
     'file.')
-flags.DEFINE_string('trained_checkpoint_prefix', "data/model.ckpt-2428", 'Checkpoint prefix.')
+flags.DEFINE_string('trained_checkpoint_prefix', "data/model.ckpt-8752", 'Checkpoint prefix.')
 flags.DEFINE_integer('max_detections', 4,
                      'Maximum number of detections (boxes) to show.')
 
-flags.DEFINE_integer('max_classes_per_detection', 4,
+flags.DEFINE_integer('max_classes_per_detection', 2,
                      'Maximum number of classes to output per detection box.')
 flags.DEFINE_integer(
     'detections_per_class', 4,
@@ -21,7 +21,7 @@ flags.DEFINE_integer(
 flags.DEFINE_bool('add_postprocessing_op', True,
                   'Add TFLite custom op for postprocessing to the graph.')
 flags.DEFINE_bool(
-    'use_regular_nms', False,
+    'use_regular_nms', True,
     'Flag to set postprocessing op to use Regular NMS instead of Fast NMS.')
 flags.DEFINE_string(
     'config_override', '', 'pipeline_pb2.TrainEvalPipelineConfig '
