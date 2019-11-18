@@ -9,13 +9,13 @@ python3 scripts_v2/retrain.py   \
 
 
 
-python3 retrain.py \
+python3 scripts_v2/retrain.py \
  --bottleneck_dir=bottlenecks_leafdisease \
  --summaries_dir=training_summaries_leafdisease/basic \
  --output_graph=leafdisease_graph.pb \
  --output_labels=leafdisease_labels.txt \
  --image_dir=../leaf_disease_38_types/leaf_disease\
- --how_many_training_steps=14000
+ --how_many_training_steps=14000 \
  --tfhub_module https://tfhub.dev/google/imagenet/mobilenet_v2_100_224/feature_vector/3
 
 
