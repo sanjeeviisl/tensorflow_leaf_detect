@@ -36,4 +36,12 @@ python3 scripts_v2/retrain.py   \
  --how_many_training_steps=14000\
  --tfhub_module https://tfhub.dev/google/imagenet/mobilenet_v2_100_224/feature_vector/3
 
+python3 scripts_v2/label_image.py \
+--graph=leaf251_graph.pb --labels=leaf251_labels.txt \
+--input_layer=Placeholder \
+--output_layer=final_result \
+--input_height=224 --input_width=224 \
+--image  ../leaf_251_files/healthy_leaf/190._quercus_montana/quercus_montana_seg_0049.jpg
+
+
 
