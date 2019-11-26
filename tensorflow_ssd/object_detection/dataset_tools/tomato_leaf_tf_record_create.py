@@ -133,7 +133,7 @@ def dict_to_tf_example(data,
 
 
 def main(_):
-  if FLAGS.set not in SETS:
+  if FLAGS.train_set not in SETS:
     raise ValueError('set must be in : {}'.format(SETS))
   if FLAGS.year not in YEARS:
     raise ValueError('year must be in : {}'.format(YEARS))
