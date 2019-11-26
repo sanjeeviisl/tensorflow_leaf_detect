@@ -25,19 +25,20 @@ from object_detection.utils import label_map_util
 
 flags = tf.app.flags
 flags.DEFINE_string('data_dir', '/hdd/data/LeafDetectData', 'Root directory to raw PASCAL VOC dataset.')
-flags.DEFINE_string('set', 'test_potato', 'Convert training set, validation set or '
-                    'merged set.')
+flags.DEFINE_string('val_set', 'test_tomato', 'Convert training set, validation set or ' 'merged set.')
+flags.DEFINE_string('train_set', 'trainval_tomato', 'Convert training set, validation set or ' 'merged set.')
 flags.DEFINE_string('annotations_dir', 'Annotations',
                     '(Relative) path to annotations directory.')
 flags.DEFINE_string('year', 'LEAF2019', 'Desired challenge year.')
-flags.DEFINE_string('output_path', 'potato_data/potato_leaf_val.record', 'Path to output TFRecord')
-flags.DEFINE_string('label_map_path', 'potato_data/potato_leaf_label_map.pbtxt',
+flags.DEFINE_string('train_output_path', 'tomato_data/tomato_leaf_train.record', 'Path to output TFRecord')
+flags.DEFINE_string('val_output_path', 'tomato_data/tomato_leaf_val.record', 'Path to output TFRecord')
+flags.DEFINE_string('label_map_path', 'tomato_data/tomato_leaf_label_map.pbtxt',
                     'Path to label map proto')
 flags.DEFINE_boolean('ignore_difficult_instances', False, 'Whether to ignore '
                      'difficult instances')
 FLAGS = flags.FLAGS
 
-SETS = ['trainval_potato', 'test_potato']
+SETS = ['trainval_tomato', 'test_tomato']
 YEARS = ['LEAF2019', 'LEAF2018']
 
 
@@ -142,14 +143,14 @@ def main(_):
   if FLAGS.year != 'merged':
     years = [FLAGS.year]
 
-  writer = tf.python_io.TFRecordWriter(FLAGS.output_path)
-
+  train_writer = tf.python_io.TFRecordWriter(FLAGS.train_output_path)
+  val_writer = tf.python_io.TFRecordWriter(FLAGS.val_output_path)
   label_map_dict = label_map_util.get_label_map_dict(FLAGS.label_map_path)
 
   for year in years:
-    logging.info('Reading from PASCAL %s dataset.', year)
+    logging.info('Reading from PASCAL %s train dataset.', year)
     examples_path = os.path.join(data_dir, year, 'ImageSets', 'Main',
-                                 FLAGS.set + '.txt')
+                                 FLAGS.train_set + '.txt')
     annotations_dir = os.path.join(data_dir, year, FLAGS.annotations_dir)
     examples_list = dataset_util.read_examples_list(examples_path)
     for idx, example in enumerate(examples_list):
@@ -163,9 +164,30 @@ def main(_):
 
       tf_example = dict_to_tf_example(data, FLAGS.data_dir, label_map_dict,
                                       FLAGS.ignore_difficult_instances)
-      writer.write(tf_example.SerializeToString())
+      train_writer.write(tf_example.SerializeToString())
 
-  writer.close()
+  train_writer.close()
+  
+  for year in years:
+    logging.info('Reading from PASCAL %s val dataset.', year)
+    examples_path = os.path.join(data_dir, year, 'ImageSets', 'Main',
+                                 FLAGS.val_set + '.txt')
+    annotations_dir = os.path.join(data_dir, year, FLAGS.annotations_dir)
+    examples_list = dataset_util.read_examples_list(examples_path)
+    for idx, example in enumerate(examples_list):
+      if idx % 100 == 0:
+        logging.info('On image %d of %d', idx, len(examples_list))
+      path = os.path.join(annotations_dir, example + '.xml')
+      with tf.gfile.GFile(path, 'r') as fid:
+        xml_str = fid.read()
+      xml = etree.fromstring(xml_str)
+      data = dataset_util.recursive_parse_xml_to_dict(xml)['annotation']
+
+      tf_example = dict_to_tf_example(data, FLAGS.data_dir, label_map_dict,
+                                      FLAGS.ignore_difficult_instances)
+      val_writer.write(tf_example.SerializeToString())
+
+  val_writer.close()
 
 
 if __name__ == '__main__':
