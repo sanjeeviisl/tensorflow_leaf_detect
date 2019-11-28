@@ -14,81 +14,81 @@ item {
 }
 
 item {
-  id: 9
+  id: 4
   name: 'Infected_Tomato_Spider_mites'
 }
 
 item {
-  id: 4
+  id: 5
   name: 'Tomato_Spider_mites'
 }
 
 item {
-  id: 5
+  id: 6
   name: 'Infected_Tomato_Target_Spot'
 }
 
 item {
-  id: 6
+  id: 7
   name: 'Tomato_Target_Spot'
 }
 
 item {
-  id: 7
+  id: 8
   name: 'Infected_Tomato_Curl_Virus'
 }
 
 item {
-  id: 8
+  id: 9
   name: 'Tomato_Curl_Virus'
 }
 
 item {
-  id: 9
+  id: 10
   name: 'Infected_Tomato_mosaic_virus'
 }
 
 item {
-  id: 10
+  id: 11
   name: 'Tomato_mosaic_virus'
 }
 
 item {
-  id: 11
+  id: 12
   name: 'Infected_Tomato_Leaf_Mold'
 }
 
 item {
-  id: 12
+  id: 13
   name: 'Tomato_Leaf_Mold'
 }
 
 item {
-  id: 13
+  id: 14
   name: 'Infected_Tomato_Bacterial_spot'
 }
 
 item {
-  id: 14
+  id: 15
   name: 'Tomato_Bacterial_spot'
 }
 
 item {
-  id: 15
+  id: 16
   name: 'Infected_Tomato_Early_blight'
 }
 
 item {
-  id: 16
+  id: 17
   name: 'Tomato_Early_blight'
 }
 
 item {
-  id: 17
+  id: 18
   name: 'Infected_Tomato_Late_blight'
 }
 
 item {
-  id: 18
+  id: 19
   name: 'Tomato_Late_blight'
 }
