@@ -26,7 +26,7 @@ from object_detection.utils import label_map_util
 flags = tf.app.flags
 flags.DEFINE_string('data_dir', '/hdd/data/LeafDetectData', 'Root directory to raw PASCAL VOC dataset.')
 flags.DEFINE_string('val_set', 'test_tomato', 'Convert training set, validation set or ' 'merged set.')
-flags.DEFINE_string('train_set', 'trainval_tomato', 'Convert training set, validation set or ' 'merged set.')
+flags.DEFINE_string('train_set', 'trainval_tomato_full', 'Convert training set, validation set or ' 'merged set.')
 flags.DEFINE_string('annotations_dir', 'Annotations',
                     '(Relative) path to annotations directory.')
 flags.DEFINE_string('year', 'LEAF2019', 'Desired challenge year.')
@@ -38,7 +38,7 @@ flags.DEFINE_boolean('ignore_difficult_instances', False, 'Whether to ignore '
                      'difficult instances')
 FLAGS = flags.FLAGS
 
-SETS = ['trainval_tomato', 'test_tomato']
+SETS = ['trainval_tomato_full', 'test_tomato']
 YEARS = ['LEAF2019', 'LEAF2018']
 
 
