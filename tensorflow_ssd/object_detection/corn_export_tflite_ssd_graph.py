@@ -9,7 +9,7 @@ flags.DEFINE_string(
     'pipeline_config_path',"model/ssd_mobilenet_v2/corn_pipeline.config" ,
     'Path to a pipeline_pb2.TrainEvalPipelineConfig config '
     'file.')
-flags.DEFINE_string('trained_checkpoint_prefix', "corn_data/model.ckpt-5417", 'Checkpoint prefix.')
+flags.DEFINE_string('trained_checkpoint_prefix', "corn_data/model.ckpt-6304", 'Checkpoint prefix.')
 flags.DEFINE_integer('max_detections', 4,
                      'Maximum number of detections (boxes) to show.')
 
