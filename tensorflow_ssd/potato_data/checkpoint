@@ -1,6 +1,6 @@
-model_checkpoint_path: "model.ckpt-2018"
-all_model_checkpoint_paths: "model.ckpt-1749"
+model_checkpoint_path: "model.ckpt-2088"
 all_model_checkpoint_paths: "model.ckpt-1816"
 all_model_checkpoint_paths: "model.ckpt-1884"
 all_model_checkpoint_paths: "model.ckpt-1951"
 all_model_checkpoint_paths: "model.ckpt-2018"
+all_model_checkpoint_paths: "model.ckpt-2088"
