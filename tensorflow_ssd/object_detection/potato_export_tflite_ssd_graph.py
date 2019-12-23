@@ -9,7 +9,7 @@ flags.DEFINE_string(
     'pipeline_config_path',"model/ssd_mobilenet_v2/potato_pipeline.config" ,
     'Path to a pipeline_pb2.TrainEvalPipelineConfig config '
     'file.')
-flags.DEFINE_string('trained_checkpoint_prefix', "potato_data/model.ckpt-4377", 'Checkpoint prefix.')
+flags.DEFINE_string('trained_checkpoint_prefix', "potato_data/model.ckpt-6437", 'Checkpoint prefix.')
 flags.DEFINE_integer('max_detections', 4,
                      'Maximum number of detections (boxes) to show.')
 
