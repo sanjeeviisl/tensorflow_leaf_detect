@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 model_checkpoint_path: "model.ckpt-9085"
 all_model_checkpoint_paths: "model.ckpt-8601"
 all_model_checkpoint_paths: "model.ckpt-8720"
 all_model_checkpoint_paths: "model.ckpt-8844"
 all_model_checkpoint_paths: "model.ckpt-8964"
 all_model_checkpoint_paths: "model.ckpt-9085"
+=======
+model_checkpoint_path: "model.ckpt-6437"
+all_model_checkpoint_paths: "model.ckpt-6252"
+all_model_checkpoint_paths: "model.ckpt-6320"
+all_model_checkpoint_paths: "model.ckpt-6386"
+all_model_checkpoint_paths: "model.ckpt-6425"
+all_model_checkpoint_paths: "model.ckpt-6437"
+>>>>>>> 4cec359d7d76aef3b5cc47f1c9790918b15f7231
